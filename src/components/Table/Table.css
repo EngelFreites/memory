@@ -1,0 +1,70 @@
+.table-button{
+  font-size: 18px;
+  display: flex;
+  gap: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 0px 0px rgb(0 0 0 / 20%);
+  transition: 0.5s ease;
+  border: 1px solid rgb(0 0 0 / 15%);
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+}
+
+.content{
+    /* justify-self: center; */
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eee;
+    border-radius: 16px;
+    font-family: 'Libre Baskerville', serif;
+    padding: 10px 30px;
+    align-self: center;
+    
+}
+
+
+  
+.table {
+  z-index: 1;
+  padding: 0px 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* align-content: center; */
+  max-width: 34rem;
+  margin: auto;
+
+}
+
+
+.content-button{
+  display: flex;
+  gap: 15px;
+}
+
+.icon{
+  font-size: 20px;
+}
+
+.reaction-emoji{
+  font-size: 65px;
+  margin: 0;
+}
+
+.table-button:hover{
+  cursor: pointer;
+  box-shadow: -3px 3px 0px 1px rgb(0 0 0 / 10%);
+  transition: box-shadow 0.5s;
+-webkit-transform: scale(1.0);
+-ms-transform: scale(1.0);
+transform: scale(1.0);
+}
+
+
+  

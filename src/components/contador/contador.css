@@ -1,0 +1,7 @@
+h1{
+  font-size: 40px;
+  font-family: var(--title-font);
+  text-align: center;
+  margin: 0;
+  color: rgb(105, 80, 248);
+}

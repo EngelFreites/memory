@@ -1,0 +1,18 @@
+:root {
+  --bg: #eee;
+  --font: "Archivo", sans-serif;
+  --font-display: "Archivo Narrow", sans-serif;
+  --violet: rgba(88,0,120,1);
+  --blue-card: #7BDCED;
+  --blue-text: #0069c0;
+  --title-font:'Anton', sans-serif;
+  
+}
+
+body {
+  margin: auto;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: var(--font);
+  overflow: hidden;
+}

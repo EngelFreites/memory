@@ -1,0 +1,29 @@
+.icon:hover{
+  cursor: pointer;
+}
+
+
+.icon{
+  text-align: center;
+}
+
+.disguise{
+  display: none;
+}
+
+.itemContent span{
+  transition: display 0.2s ease-in-out;
+
+}
+
+.itemContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transition: width 0.2s ease-in-out;
+}
+
+.itemContent span:hover{
+  cursor: pointer;
+}

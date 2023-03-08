@@ -1,0 +1,36 @@
+.var-menu{
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  transition: width 0.2s ease-in-out;
+}
+
+.hamburgue:hover{
+  cursor: pointer;
+}
+
+.expanded{
+  width: 200px;
+}
+
+.collapsed{
+  width: 70px;
+}
+
+.arrow-icon{ 
+  align-self: end;
+}
+
+.arrow-icon:hover{
+  cursor: pointer;
+}
+
+

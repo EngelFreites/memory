@@ -1,0 +1,36 @@
+.formulario{
+  display: flex;
+  flex-direction: column;
+
+}
+.title-singOn{
+  font-family: 'Shantell Sans', cursive;
+}
+
+
+
+.formulario input {
+  border: none;
+  width: 280px;
+  padding: 7px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 6px 4px 7px 4px rgb(0 0 0 / 8%);
+}
+
+
+.button-formulario{
+  height: 35px;
+  width: 140px;
+  border: none;
+  background-color: #ffaa00;
+  align-self: center;
+  border-radius: 4px;
+  transition: all 1s ease;
+}
+
+.button-formulario:hover{
+  cursor: pointer;
+
+  background-color: #f7b6339e;
+}
