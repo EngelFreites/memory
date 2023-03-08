@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './TarjetaLoading.css'
+import './tarjetaLoading.css'
 
 export default function TarjetaLoading ({isLoading}){
   const [show, setShow] = useState(false)
