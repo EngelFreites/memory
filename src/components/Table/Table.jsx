@@ -2,13 +2,14 @@ import { useEffect, useState, useContext } from 'react'
 import { useLevel } from '../../hooks/useLevel'
 import { Tarjeta } from '../Tarjeta/Tarjeta'
 import { TiArrowSync, TiArrowRight } from "react-icons/ti"
-import'./Table.css'
 import moveContext from '../../context/moveGameContext'
 import moveUserContext from '../../context/moveUserContext'
 import { LightBox } from '../lightBox/LightBox'
 import Header from '../header/Header'
 import { VarMenu } from '../varMenu/varMenu'
 import { useNavigate, useParams } from 'react-router-dom'
+import Button from '../Button/Button'
+import'./Table.css'
 
 
 export default function Table () {
@@ -17,9 +18,6 @@ export default function Table () {
   const navigate = useNavigate()
   const {nivel, loading, setTryAgain, cartas, setCartas, setNivel} = useLevel(numberLevel)
  
-
-  console.log({numberLevel})
-  
   //contextos
   const moveUserContxt = useContext(moveUserContext)
   const moveContxt = useContext(moveContext)
@@ -85,11 +83,11 @@ export default function Table () {
             : <LightBox>
               <p className='reaction-emoji'>🤦</p>
               <h1> you are loser </h1>
-                <button className='table-button' onClick={() =>{
+                <Button className='table-button' onClick={() =>{
                   setMoveUser(0)
                   setTryAgain(true)
                 }
-              }> Try Again <TiArrowSync className='icon'/> </button>
+              }> Try Again <TiArrowSync className='icon'/> </Button>
               
               </LightBox>
           }
@@ -100,16 +98,16 @@ export default function Table () {
             <p className='reaction-emoji'>🤩</p>
             <h1>You are the winner</h1>
             <div className='content-button'>
-              <button className='table-button' onClick={() =>{
+              <Button  onClick={() =>{
                 setMoveUser(0)
                 setTryAgain(true)
-              }}> Try Again  <TiArrowSync className='icon'/> </button>
+              }}> Try Again  <TiArrowSync className='icon'/> </Button>
 
-              <button className='table-button' onClick={() => {
+              <Button onClick={() => {
                 setNivel(nivel + 1 )
                 navigate(`/levels/${Number(numberLevel) + 1}`)
                 setMoveUser(0)
-              }}>next level <TiArrowRight className='icon'/> </button>
+              }}>next level <TiArrowRight className='icon'/> </Button>
             </div>
 
             </LightBox>

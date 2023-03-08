@@ -14,6 +14,7 @@ import Formulario from './components/formulario/Formulario'
 import { ContentGame } from './components/content-Game/ContentGame'
 import { ProtectectRoute } from './routes/ProtectectRoute'
 import Levels from './routes/Levels/Levels'
+import Home from './routes/Home/Home'
 
 
 
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
     element:<ProtectectRoute><Table /></ProtectectRoute> 
     
   },
+  {
+    path:'/home',
+    element:<ProtectectRoute><Home/></ProtectectRoute>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

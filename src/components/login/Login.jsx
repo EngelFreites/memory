@@ -47,7 +47,7 @@ const Login = () => {
           if(!res.error){
             window.localStorage.setItem( 'tokenUser', JSON.stringify(res))
             
-            navigate('/levels/1')
+            navigate('/home')
           }else{
             Swal.fire({
               title: 'ERROR',

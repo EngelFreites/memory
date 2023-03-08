@@ -8,16 +8,16 @@ import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 const elementVar = [
   {
     number : 1,
-    icon: '🪜',
-    label: 'levels',
-    link:'/levels'
+    icon: '🏡',
+    label: 'home',
+    link:'/home'
+
   },
   {
     number : 2,
-    icon: '🏆',
-    label: 'raking',
-    link:'/raking'
-
+    icon: '🪜',
+    label: 'levels',
+    link:'/levels'
   },
   {
     number: 3,
