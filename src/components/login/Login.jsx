@@ -33,7 +33,7 @@ const Login = () => {
       initialValues={{email: '', password: '' }}
       validate={validate}
       onSubmit={(values, {resetForm}) => {
-        fetch(`${apiUrl}/api/login/`,{ method: "POST",
+        fetch(`${apiUrl}api/login/`,{ method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
