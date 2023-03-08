@@ -10,7 +10,6 @@
   cursor: pointer;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  border: 4px dashed #E14D5A;
 }
 
 .tarjeta__contenido {

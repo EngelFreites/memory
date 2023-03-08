@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2"
-const apiUrl = import.meta.env.VITE_API_URL
+import Loading from '../Loading/Loading';
+import { postLogin } from '../../services/login';
+
 
 const validate = (values) => {
 
@@ -23,9 +25,10 @@ const validate = (values) => {
 
 
 const Login = () => {
+  const [isLoading, setIsLoading] = useState(false)
  const navigate = useNavigate()
 
-  
+  if(isLoading) return <Loading isLoading={isLoading} />
   return(
     <div className='content'>
     <h1>Login</h1>
@@ -34,20 +37,15 @@ const Login = () => {
       initialValues={{email: '', password: '' }}
       validate={validate}
       onSubmit={(values, {resetForm}) => {
-        fetch(`${apiUrl}api/login/`,{ method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body : JSON.stringify(values)
-        }
+
+        setIsLoading(true)
        
-        )
-        .then(res => res.json())
-        .then(res => {
+        postLogin({values}).then(res => {
           if(!res.error){
             window.localStorage.setItem( 'tokenUser', JSON.stringify(res))
             
             navigate('/home')
+            setIsLoading(false)
           }else{
             Swal.fire({
               title: 'ERROR',

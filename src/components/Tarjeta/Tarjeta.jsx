@@ -9,6 +9,7 @@ export function Tarjeta({content, setVisibales, visiables, tarjeta}){
 
 
   }
+
   return(
 
   <div 

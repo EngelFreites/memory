@@ -1,0 +1,14 @@
+.content-loading{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.content-tarje{
+  display: flex;
+}
+
+.content-loading h2 {
+ color: white;
+}
