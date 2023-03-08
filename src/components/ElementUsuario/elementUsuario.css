@@ -10,3 +10,9 @@
   width: 65px;
   margin: 0;
 }
+.ElementUsuario {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
