@@ -23,6 +23,7 @@ const validate = (values) => {
 
 const Login = () => {
  const navigate = useNavigate()
+ const apiUrl = process.env.VITE_API_URL
   
   return(
     <div className='content'>
@@ -32,7 +33,7 @@ const Login = () => {
       initialValues={{email: '', password: '' }}
       validate={validate}
       onSubmit={(values, {resetForm}) => {
-        fetch('http://localhost:3001/api/login/',{ method: "POST",
+        fetch(`${apiUrl}/api/login/`,{ method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
