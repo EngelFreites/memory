@@ -66,7 +66,7 @@ export default function Table () {
       <div className='content-table'>
         <div className="table">
           {
-            loading && <h1> Cargando </h1>
+            loading && <h2> Cargando </h2>
           }
 
           { move !==  moveUser
