@@ -10,8 +10,7 @@ export const getLevels = () =>{
 
 
 export const getLevel = ({nivel}) => {
-  return fetch(`${apiUrl}/api/levels/${nivel}`)
+  return fetch(`${apiUrl}api/levels/${nivel}`)
     .then(res => res.json() )
     .then( level => level)
 }
-console.log(apiUrl)

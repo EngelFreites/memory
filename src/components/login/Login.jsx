@@ -44,8 +44,6 @@ const Login = () => {
         )
         .then(res => res.json())
         .then(res => {
-          console.log(res)
-          
           if(!res.error){
             window.localStorage.setItem( 'tokenUser', JSON.stringify(res))
             
