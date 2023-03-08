@@ -1,4 +1,4 @@
-const apiUrl = process.env.VITE_API_URL
+const apiUrl = import.meta.env.VITE_API_URL
 
 
 
@@ -10,7 +10,7 @@ export const getLevels = () =>{
 
 
 export const getLevel = ({nivel}) => {
-  return fetch(`${apiUrl}api/levels/${nivel}`)
+  return fetch(`${apiUrl}/api/levels/${nivel}`)
     .then(res => res.json() )
     .then( level => level)
 }
