@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2"
+const apiUrl = import.meta.env.VITE_API_URL
 
 const validate = (values) => {
 
@@ -23,7 +24,7 @@ const validate = (values) => {
 
 const Login = () => {
  const navigate = useNavigate()
- const apiUrl = process.env.VITE_API_URL
+
   
   return(
     <div className='content'>
