@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import './formulario.css'
 import Swal from 'sweetalert2'
 import { postUser } from '../../services/users';
 import { Link, useNavigate } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 const validate = (values) => {
+
   const errors = {};
   if(!values.name){
     errors.name = 'Required'
@@ -30,6 +32,7 @@ const validate = (values) => {
   return errors;
 }
 const Formulario = () => {
+  const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
 
   return(
@@ -42,6 +45,7 @@ const Formulario = () => {
         onSubmit={(values, {resetForm}) => {
           postUser(values)
           .then(res =>{
+            setIsLoading(true)
             if(res.error){
               Swal.fire(
               {
@@ -50,7 +54,9 @@ const Formulario = () => {
                 icon: 'error',
                 confirmButtonText: 'Aceptar'
               }
+             
             )
+            setIsLoading(false)
             }else{
               Swal.fire(
               {
@@ -61,6 +67,7 @@ const Formulario = () => {
               }
             ).then( result =>{
               if(result.isConfirmed){
+                setIsLoading(false)
                 return navigate('/')
               }
             })
@@ -68,7 +75,8 @@ const Formulario = () => {
                 
         resetForm()}}
       >
-        
+        { isLoading && <Loading isLoading={isLoading}/>}
+
         <Form className='formulario'>
           <label>Name</label>
           <Field type="text" name="name" />
