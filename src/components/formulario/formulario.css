@@ -1,6 +1,7 @@
 .formulario{
   display: flex;
   flex-direction: column;
+  width: 100%;
 
 }
 .title-singOn{
@@ -9,7 +10,7 @@
 
 
 
-.formulario input {
+.input-singIn {
   border: none;
   width: 280px;
   padding: 7px;
