@@ -9,7 +9,7 @@ import Header from '../header/Header'
 import { VarMenu } from '../varMenu/varMenu'
 import { useNavigate, useParams } from 'react-router-dom'
 import Button from '../Button/Button'
-import'./table.css'
+import'./Table.css'
 
 
 export default function Table () {
