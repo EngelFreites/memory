@@ -1,0 +1,15 @@
+.button-init{
+  margin-top: 20px;
+  height: 35px;
+  width: 140px;
+  border: none;
+  background-color: #ffaa00;
+  align-self: center;
+  border-radius: 4px;
+  transition: all 1s ease;
+}
+
+.button-init:hover{
+  cursor: pointer;
+  background-color: #f7b6339e;
+}

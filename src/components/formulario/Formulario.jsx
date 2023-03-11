@@ -5,6 +5,9 @@ import Swal from 'sweetalert2'
 import { postUser } from '../../services/users';
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
+import Title from '../Title/Title';
+import ButtonInit from '../ButtonInit/ButtonInit';
+import Text from '../Text/Text';
 
 const validate = (values) => {
 
@@ -40,7 +43,9 @@ const Formulario = () => {
 
   return(
       <div className='content'>
-        <h1 title='title-singOn'>REGISTRATE</h1>
+
+        <Title title='title-singOn'>REGISTRATE</Title>
+
         <Formik
           
           initialValues={{ name: '', nickName: '', email: '', password: '' }}
@@ -81,31 +86,31 @@ const Formulario = () => {
           resetForm()}}
         >
           <Form className='formulario'>
-            <label>Name</label>
+            <Text>Name</Text>
             <div className='content-input'> 
               <Field className='input-singIn' type="text" name="name" />
               <ErrorMessage name="name" />
             </div>
 
-            <label>Nickname</label>
+            <Text>Nickname</Text>
             <div className='content-input'> 
               <Field type="text" className='input-singIn' name="nickName" />
               <ErrorMessage name="nickName" />
             </div>
-            <label>Email</label>
+            <Text>Email</Text>
             <div className='content-input'> 
               <Field type="email" className='input-singIn' name="email" />
               <ErrorMessage name="email"  />
             </div> 
 
-            <label>Password</label>
+            <Text>Password</Text>
             <div className='content-input'> 
               <Field type="password" className='input-singIn' name="password" />
               <ErrorMessage name="password"/>
             </div>
-            <button className='button-formulario' type="submit">
+            <ButtonInit type="submit">
               Submit
-            </button>
+            </ButtonInit>
           </Form>
         </Formik>
         <Link to={'/'}>Login</Link>
