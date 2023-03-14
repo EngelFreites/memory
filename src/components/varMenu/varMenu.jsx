@@ -21,6 +21,12 @@ const elementVar = [
   },
   {
     number: 3,
+    icon: '🏰',
+    label: 'Discover',
+    link: '/discover'
+  },
+  {
+    number: 4,
     icon: '😿',
     label: 'Closed',
     link: '/'
