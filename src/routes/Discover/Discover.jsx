@@ -2,6 +2,7 @@ import { useState } from "react"
 import Loading from "../../components/Loading/Loading"
 import Title from "../../components/Title/Title"
 import { creatEmoji } from "../../services/ai"
+import Button from '../../components/Button/Button'
 import'./discover.css'
 
 const disney = ['La bella y la bestia', 'la cenicienta', 'tierra de oso', 'La Dama y el Vagabundo', 'El rey león', 'Mulán', 'Aladdín']
@@ -57,9 +58,9 @@ export default function Discover () {
   if(movieTrue.length > 0){
 
     return(
-      <div>
+      <div className="content-discover">
         <Title color={'white'}>Repuesta correcta Siguiente Pelicula</Title> 
-        <button onClick={nextMovie}>Siguiente Pelicula</button>
+        <Button onClick={nextMovie}>Siguiente Pelicula</Button>
       </div>
     )
   }
@@ -75,11 +76,11 @@ export default function Discover () {
             <div className="content-emoji-movie">{emojiMovie}</div>  
             <div className="content-input-movie">
               <input type='text' onChange={handleChange} value={value}/> 
-              <button onClick={comparative}> Enviar </button> 
+              <Button onClick={comparative}> Enviar </Button> 
             </div>
             
           </div> 
-        : <button onClick={handleClick} > Play</button>
+        : <Button onClick={handleClick} > Play</Button>
       }
   
     </div>

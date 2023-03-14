@@ -20,3 +20,18 @@
   flex-direction: column;
   gap: 15px;
 }
+
+.content-input-movie{ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+}
+
+.content-input-movie input{
+  outline:none ;
+  color: rgb(133, 50, 133);
+  width: 220px;
+  padding: 10px;
+
+}
