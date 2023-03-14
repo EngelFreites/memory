@@ -1,0 +1,22 @@
+.content-emoji-movie{
+  border-radius: 6px;
+  padding: 25px;
+  background-color: beige;
+  font-size: 3rem;
+  font-weight: 200;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 20px
+}
+
+.content-discover{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.content-table-movie{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

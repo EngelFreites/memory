@@ -15,6 +15,7 @@ import { ContentGame } from './components/content-Game/ContentGame'
 import { ProtectectRoute } from './routes/ProtectectRoute'
 import Levels from './routes/Levels/Levels'
 import Home from './routes/Home/Home'
+import Discover from './routes/Discover/Discover'
 
 
 
@@ -45,7 +46,13 @@ const router = createBrowserRouter([
   {
     path:'/home',
     element:<ProtectectRoute><Home/></ProtectectRoute>
-  }
+  },
+  {
+    
+    path: '/discover',
+    element:<ProtectectRoute><Discover /></ProtectectRoute> 
+    
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
