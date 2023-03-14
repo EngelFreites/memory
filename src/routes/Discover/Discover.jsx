@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {VarMenu} from '../../components/varMenu/varMenu'
 import Loading from "../../components/Loading/Loading"
 import Title from "../../components/Title/Title"
 import { creatEmoji } from "../../services/ai"
@@ -68,7 +69,9 @@ export default function Discover () {
   if(isLoading) return <Loading isLoading={isLoading} />
 
   return (
+
     <div className="content-discover">
+      <VarMenu />
       <Title color={'white'}>Descubre la pelicula </Title> 
       {
         isLoading === false && emojiMovie.length > 0

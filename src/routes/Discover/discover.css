@@ -29,6 +29,9 @@
 }
 
 .content-input-movie input{
+  border: none;
+  border-radius: 4px;
+  font-size: large;
   outline:none ;
   color: rgb(133, 50, 133);
   width: 220px;
