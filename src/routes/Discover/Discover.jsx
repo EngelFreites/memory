@@ -5,7 +5,8 @@ import Title from "../../components/Title/Title"
 import { creatEmoji } from "../../services/ai"
 import Button from '../../components/Button/Button'
 import'./discover.css'
-
+import Header from '../../components/header/Header'
+import GoodOrBad from "../../components/GoodOrBad/GoodOrBad"
 const disney = ['La bella y la bestia', 
   'la cenicienta', 
   'tierra de oso', 
@@ -24,6 +25,8 @@ export default function Discover () {
   const [movieTrue, setMovieTrue] = useState([])
   const [movieFalse, setMovieFalse] = useState([])
   const [emojiMovie, setEmojiMovie] = useState([])
+  const [good, setGood] = useState(0)
+  const [bad, setBad] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
   const [value, setValue] = useState('')
 
@@ -59,8 +62,10 @@ export default function Discover () {
     console.log(response)
 
     if(response){
+      setGood( good + 1)
       setMovieTrue([...movieTrue, value])
     }else{
+      setBad( bad + 1)
       setMovieFalse([...movieFalse, value])
     }
     setValue('')
@@ -99,6 +104,9 @@ export default function Discover () {
 
     <div className="content-discover">
       <VarMenu />
+      <Header>
+        <GoodOrBad good={good} bad={bad} />
+      </Header>
       <Title color={'white'}>Descubre la pelicula </Title> 
       {
         isLoading === false && emojiMovie.length > 0

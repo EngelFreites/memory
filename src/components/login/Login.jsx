@@ -15,7 +15,7 @@ const validate = (values) => {
   const errors = {}
 
   if (!values.email) {
-    errors.email = <div title='requerido'>🛑</div>;
+    errors.email = <div title='requerido'>❗</div>;
   } else if (
     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
   ) {
@@ -23,7 +23,7 @@ const validate = (values) => {
   }
 
   if(!values.password){
-    errors.password =  <div title='requerido'>🛑</div>
+    errors.password =  <div title='requerido'>❗</div>
   }
 
   return errors;

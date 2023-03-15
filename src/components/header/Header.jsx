@@ -1,12 +1,11 @@
-import Contador from "../contador/contador";
 import './header.css'
 
-export default function Header  (){
+export default function Header  ({children}){
 
 
   return(
     <header> 
-      <Contador/>
+      {children}
     </header>
   )
 }

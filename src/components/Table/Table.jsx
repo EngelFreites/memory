@@ -10,6 +10,7 @@ import { VarMenu } from '../varMenu/varMenu'
 import { useNavigate, useParams } from 'react-router-dom'
 import Button from '../Button/Button'
 import'./Table.css'
+import Contador from '../contador/contador'
 
 
 export default function Table () {
@@ -62,7 +63,7 @@ export default function Table () {
   return(
     <>
     <VarMenu />
-      <Header/>
+      <Header><Contador/></Header>
       <div className='content-table'>
         <div className="table">
           {

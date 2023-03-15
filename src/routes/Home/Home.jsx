@@ -7,6 +7,10 @@ import Title from '../../components/Title/Title'
 export default function Home (){
   const navigate = useNavigate()
 
+  const handleClick2 = () =>{
+    navigate('/discover')
+  }
+
   const handleClick = ()=>{
     navigate('/levels/1')
   }
