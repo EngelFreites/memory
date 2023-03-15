@@ -121,6 +121,7 @@ export default function Table () {
               }}> Try Again  <TiArrowSync className='icon'/> </Button>
 
               <Button onClick={() => {
+                setInVisible(0)
                 setNivel(nivel + 1 )
                 navigate(`/levels/${Number(numberLevel) + 1}`)
                 setMoveUser(0)
