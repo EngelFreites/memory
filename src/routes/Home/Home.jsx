@@ -29,7 +29,7 @@ export default function Home (){
         <div className="buttons-inital-game">
           <Title> JUEGOS </Title>
           <Button onClick={handleClick}> MEMORIA 🤯 </Button>
-          <Button onClick={handleClick2}> DESCUBRE LA PELICULA 🎦 </Button>
+          <Button onClick={handleClick2}> ADIVINA LA PELICULA 🎦 </Button>
         </div>
       </div>
      

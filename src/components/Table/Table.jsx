@@ -15,6 +15,7 @@ import Contador from '../contador/contador'
 
 export default function Table () {
   const [visiables, setVisibales] = useState([])
+  const [inVisible, setInVisible] = useState(0)
   const {numberLevel} = useParams()
   const navigate = useNavigate()
   const {nivel, loading, setTryAgain, cartas, setCartas, setNivel} = useLevel(numberLevel)
@@ -34,13 +35,24 @@ export default function Table () {
     if(element1 === element2 ){
         setTimeout(()=>{
           const restCartas = Object.keys(cartas)
-            .filter( carta => cartas[carta] !== element1)
             .reduce((obj, key) => {
-              return Object.assign(obj,
-                 { [key]: cartas[key]}
+              console.log(element1)
+              if(cartas[key] === element1){
+                console.log(key)
+                return Object.assign(obj,
+                  {[key]: 'visible'}
                 )
+              }else{
+                return Object.assign(obj,
+                  
+                  { [key]: cartas[key]}
+                )
+              }
+              
             },{})
-
+            
+            console.log(restCartas)
+          setInVisible(inVisible + 2)
           setCartas(restCartas)
           setVisibales([])
         }, 1200)
@@ -59,6 +71,8 @@ export default function Table () {
       comparate(cartas, visiables, setVisibales, setCartas)
     }
   },[visiables])
+
+  console.log(inVisible)
 
   return(
     <>
@@ -94,7 +108,7 @@ export default function Table () {
           }
 
           {
-            Object.keys(cartas).length === 0 && !loading
+            Object.keys(cartas).length === inVisible && !loading
             ? <LightBox className='lightbox'>
             <p className='reaction-emoji'>🤩</p>
             <h1>You are the winner</h1>
