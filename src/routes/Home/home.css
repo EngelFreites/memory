@@ -1,0 +1,58 @@
+.content-home{
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.icon-home{
+
+  font-size: 135px;
+}
+
+.about-web{
+  color: rgb(246, 118, 204);
+  font-size: small;
+  text-align: center;
+  margin: 0;
+}
+
+.title-home{
+  font-size: 58px;
+  color: white;
+}
+
+.box-home{
+  border-radius: 6px;
+  padding: 20px;
+  height: 300px;
+  background-color: beige;
+  display: flex;
+  gap: 35px;
+}
+
+.linea{
+  width: 1px;
+  height: 295px;
+  background-color: blueviolet;
+}
+
+.buttons-inital-game{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.discribe-home-game{
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.discribe-home-game p{
+  margin: 0;
+}
+

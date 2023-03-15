@@ -6,14 +6,28 @@ import { creatEmoji } from "../../services/ai"
 import Button from '../../components/Button/Button'
 import'./discover.css'
 
-const disney = ['La bella y la bestia', 'la cenicienta', 'tierra de oso', 'La Dama y el Vagabundo', 'El rey león', 'Mulán', 'Aladdín']
+const disney = ['La bella y la bestia', 
+  'la cenicienta', 
+  'tierra de oso', 
+  'La Dama y el Vagabundo', 
+  'El rey leon', 
+  'Mulan', 
+  'Aladdin',
+  'los vengadores',
+  'ant-man',
+  'harry potter',
+
+]
 
 export default function Discover () {
   const [move, setMove] = useState(0)
   const [movieTrue, setMovieTrue] = useState([])
+  const [movieFalse, setMovieFalse] = useState([])
   const [emojiMovie, setEmojiMovie] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [value, setValue] = useState('')
+
+  console.log(disney[move])
 
   const handleClick = async () =>{
     setIsLoading(true)
@@ -23,6 +37,7 @@ export default function Discover () {
   }
 
   const nextMovie = async () =>{
+    setMovieFalse([])
     setMovieTrue([])
     setEmojiMovie([])
     setIsLoading(true)
@@ -45,6 +60,8 @@ export default function Discover () {
 
     if(response){
       setMovieTrue([...movieTrue, value])
+    }else{
+      setMovieFalse([...movieFalse, value])
     }
     setValue('')
   }
@@ -61,6 +78,16 @@ export default function Discover () {
     return(
       <div className="content-discover">
         <Title color={'white'}>Repuesta correcta Siguiente Pelicula</Title> 
+        <Button onClick={nextMovie}>Siguiente Pelicula</Button>
+      </div>
+    )
+  }
+
+  if(movieFalse.length > 0){
+
+    return(
+      <div className="content-discover">
+        <Title color={'white'}>Repuesta Incorrecta Siguiente Pelicula</Title> 
         <Button onClick={nextMovie}>Siguiente Pelicula</Button>
       </div>
     )
