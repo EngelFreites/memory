@@ -93,6 +93,7 @@ export default function Discover () {
     return(
       <div className="content-discover">
         <Title color={'white'}>Repuesta Incorrecta Siguiente Pelicula</Title> 
+        <h2>{emojiMovie} = {disney[move - 1]}</h2>
         <Button onClick={nextMovie}>Siguiente Pelicula</Button>
       </div>
     )
