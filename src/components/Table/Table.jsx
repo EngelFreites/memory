@@ -100,6 +100,7 @@ export default function Table () {
               <h1> you are loser </h1>
                 <Button className='table-button' onClick={() =>{
                   setMoveUser(0)
+                  setInVisible(0)
                   setTryAgain(true)
                 }
               }> Try Again <TiArrowSync className='icon'/> </Button>
@@ -114,6 +115,7 @@ export default function Table () {
             <h1>You are the winner</h1>
             <div className='content-button'>
               <Button  onClick={() =>{
+                setInVisible(0)
                 setMoveUser(0)
                 setTryAgain(true)
               }}> Try Again  <TiArrowSync className='icon'/> </Button>
