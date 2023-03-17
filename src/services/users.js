@@ -5,6 +5,6 @@ export const postUser = (values) =>{
   headers: { "Content-Type": "application/json"},
   body: JSON.stringify(values)
 })
-  .then(res =>  console.log(res))
+  .then(res =>  res.json())
 }
 

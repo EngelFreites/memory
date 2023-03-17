@@ -1,7 +1,7 @@
 import './buttonInit.css'
 
-export default function ButtonInit ({children, onClick}) {
+export default function ButtonInit ({children, onClick, type}) {
    return (
-    <button className='button-init' onClick={onClick}>{children}</button>
+    <button type={type} className='button-init' onClick={onClick}>{children}</button>
    )
 }
