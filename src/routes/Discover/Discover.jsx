@@ -6,8 +6,11 @@ import { creatEmoji } from "../../services/ai"
 import Button from '../../components/Button/Button'
 import'./discover.css'
 import Header from '../../components/header/Header'
+import { LightBox } from "../../components/lightBox/LightBox"
+import { TiArrowSync } from "react-icons/ti"
 import GoodOrBad from "../../components/GoodOrBad/GoodOrBad"
-const disney = ['La bella y la bestia', 
+
+const movies = ['La bella y la bestia', 
   'la cenicienta', 
   'tierra de oso', 
   'La Dama y el Vagabundo', 
@@ -30,11 +33,11 @@ export default function Discover () {
   const [isLoading, setIsLoading] = useState(false)
   const [value, setValue] = useState('')
 
-  console.log(disney[move])
+  console.log(movies[move])
 
   const handleClick = async () =>{
     setIsLoading(true)
-    const movieEmoji = await creatEmoji(disney[move])
+    const movieEmoji = await creatEmoji(movies[move])
     setEmojiMovie(emojiMovie.concat(movieEmoji.replace(':', '')))
     setIsLoading(false)
   }
@@ -45,19 +48,19 @@ export default function Discover () {
     setEmojiMovie([])
     setIsLoading(true)
 
-    const movieEmoji = await creatEmoji(disney[move])
+    const movieEmoji = await creatEmoji(movies[move])
     setEmojiMovie(movieEmoji.replace(':', ''))
 
     setIsLoading(false)
  
   }
 
-
+  console.log(move)
 
   const comparative = async () =>{
     setMove( move + 1)
 
-    const response  = value.toLowerCase().trim() === disney[move].toLowerCase()
+    const response  = value.toLowerCase().trim() === movies[move].toLowerCase()
 
     console.log(response)
 
@@ -71,8 +74,7 @@ export default function Discover () {
     setValue('')
   }
   
-  console.log({move})
-  console.log(movieTrue)
+
 
   const handleChange = (e) =>{
     setValue(e.target.value)
@@ -93,7 +95,7 @@ export default function Discover () {
     return(
       <div className="content-discover">
         <Title color={'white'}>Repuesta Incorrecta Siguiente Pelicula</Title> 
-        <h2>{emojiMovie} = {disney[move - 1]}</h2>
+        <h2>{emojiMovie} = {movies[move - 1]}</h2>
         <Button onClick={nextMovie}>Siguiente Pelicula</Button>
       </div>
     )
@@ -101,7 +103,20 @@ export default function Discover () {
   
   if(isLoading) return <Loading isLoading={isLoading} />
 
+  if( move > movies.length) return (
+    <LightBox>
+    <p className='reaction-emoji'>🤪</p>
+    <h1> NIVELES TERMINADOS </h1>
+      <Button className='table-button' onClick={() =>{    
+        move(0)
+      }
+    }> Try Again <TiArrowSync className='icon'/> </Button>
+    
+  </LightBox>
+  )
+
   return (
+
 
     <div className="content-discover">
       <VarMenu />

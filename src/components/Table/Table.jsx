@@ -51,7 +51,6 @@ export default function Table () {
               
             },{})
             
-            console.log(restCartas)
           setInVisible(inVisible + 2)
           setCartas(restCartas)
           setVisibales([])
@@ -64,6 +63,8 @@ export default function Table () {
         
       }
   }
+
+  console.log(nivel)
    
   useEffect(() => {
 
@@ -72,7 +73,26 @@ export default function Table () {
     }
   },[visiables])
 
-  console.log(inVisible)
+  if(nivel > 3){
+    return(
+      <div className='table'>
+        <LightBox>
+          <p className='reaction-emoji'>🤪</p>
+          <h1> NIVELES TERMINADOS </h1>
+            <Button className='table-button' onClick={() =>{
+              setMoveUser(0)
+              setInVisible(0)
+              setTryAgain(true)         
+              setNivel(1)
+            }
+          }> Try Again <TiArrowSync className='icon'/> </Button>
+          
+        </LightBox>
+
+      </div>
+    )
+  }
+
 
   return(
     <>
@@ -80,6 +100,7 @@ export default function Table () {
       <Header><Contador/></Header>
       <div className='content-table'>
         <div className="table">
+  
           {
             loading && <h2> Cargando </h2>
           }
@@ -97,7 +118,7 @@ export default function Table () {
 
             : <LightBox>
               <p className='reaction-emoji'>🤦</p>
-              <h1> you are loser </h1>
+              <h1> ERES UN PERDEDOR!! </h1>
                 <Button className='table-button' onClick={() =>{
                   setMoveUser(0)
                   setInVisible(0)
@@ -112,7 +133,7 @@ export default function Table () {
             Object.keys(cartas).length === inVisible && !loading
             ? <LightBox className='lightbox'>
             <p className='reaction-emoji'>🤩</p>
-            <h1>You are the winner</h1>
+            <h1>GANASTE AHORA VE AL SIGUIENTE NIVEL</h1>
             <div className='content-button'>
               <Button  onClick={() =>{
                 setInVisible(0)
